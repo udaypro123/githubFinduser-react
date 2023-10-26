@@ -10,10 +10,14 @@ function App() {
   const [userdata, setUserdata] = useState()
 
   const getUser = async (username) => {
-    const res = await fetch(`https://api.github.com/users/${username}`)
+    if(!username){
+      alert("please enter username")
+    }else{
+      const res = await fetch(`https://api.github.com/users/${username}`)
     const data = await res.json();
-    console.log(data)
+    
     setUserdata(data)
+    }
   }
 
   return (
@@ -39,6 +43,7 @@ function App() {
                   src={userdata.avatar_url}
                   alt='Green double couch with wooden legs'
                   borderRadius='lg'
+                  boxShadow=" 0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2)"
                 />
                 <Stack mt='6' spacing='3'>
                   <Heading size='md'>Name :  {userdata.name} </Heading>
