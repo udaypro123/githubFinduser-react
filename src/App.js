@@ -42,16 +42,16 @@ function App() {
                 />
                 <Stack mt='6' spacing='3'>
                   <Heading size='md'>Name :  {userdata.name} </Heading>
-                  <Heading size='md' color='blue.600'>
+                  <Heading size='sm' as='i' color='blue.600'>
                     Username : {userdata.login}
                   </Heading>
-                  <Heading size='md' color='blue.800'>
+                  <Heading size='sm' as='i' color='blue.800'>
                     No. of public repos : {userdata.public_repos}
                   </Heading>
-                  <Heading size='md'>
+                  <Heading size='sm' as='i'>
                     No. of public gists :  {userdata.public_gists}
                   </Heading>
-                  <Text color='blue.500' fontSize='2xl'>
+                  <Text color='blue.800'  size='md' as='i' marginTop="1rem" >
                     Profile Created :  {userdata.created_at.slice(0, 4) + "/" + userdata.created_at.slice(5, 7) + "/" + userdata.created_at.slice(8, 10)}
                   </Text>
                 </Stack>
